@@ -1,0 +1,7 @@
+py mapper.py < file2.txt | sort | py reducer.py palabra_a_buscar
+
+py premapper.py | sort | py reducer.py palabra_a_buscar
+
+py execute.py pathArchivosABuscar PathKeys filtro(l o w)
+
+//key file must be named Keys.txt

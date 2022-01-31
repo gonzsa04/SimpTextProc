@@ -11,7 +11,7 @@ def filterWords(text, fileName, filterType):
     if '.xml' not in fileName: #and '.page' not in fileName and '.cmp' not in fileName and '.cls' not in fileName:
         for line in text:
 
-            '''if '//' in line and fileName == '.cls':
+            if '//' in line and '.cls' in fileName:
                 line = line[0:line.find('//') - 1]
             else: 
                 if '@modify' in line:
@@ -19,18 +19,17 @@ def filterWords(text, fileName, filterType):
             if "{'label':" in line:
                 line = line[0:line.find("{'label':") - 1]
 
-            if ('/*' in line and fileName == '.cls') or '<!--' in line or ((' <p' in line or ' <h' in line) and fileName != '.cls'):
-                comment = True'''
+            if ('/*' in line and '.cls' in fileName) or '<!--' in line or ((' <p' in line or ' <h' in line) and '.cls' not in fileName):
+                comment = True
 
             if comment == False:
-                #print(ogLine)
+                ogLine = line
                 line = re.sub( r'^\W+|\W+$', '', line )
                 words = re.split(r"\W+", line)
-                ogLine = line
         
                 for word in words:
                     #print(words)
-                    ogLine = ogLine[0:ogLine.find(word) + 200]
+                    ogLine = ogLine[0:ogLine.find(word) + 200].rstrip('\n').rstrip('\t')
                     letter = ''
                     
                     if filterType == 'w':

@@ -14,7 +14,8 @@ def printLines():
         if key == word and filterType == 'w':
             fichero.write(
                 "(F: " + filterType + ") Se ha encontrado la palabra " + key + " en el archivo " + fileName.rstrip('\n') + " en la Línea " + lineNumber +
-                '\n' + keyLine + 
+                '\n' +
+                '\n' +  lineNumber + ' ' + keyLine[keyLine.find(keyLine.split()[0]):-1] + 
                 '\n' +
                 '\n' + 
                 fileName +
@@ -29,7 +30,8 @@ def printLines():
             if letter == word and filterType == 'l':
                 fichero.write(
                     "(F: " + filterType + ") Se ha encontrado la letra " + letter + " en la palabra " + key + " en el archivo " + fileName.rstrip('\n') + " en la Línea " + lineNumber +
-                    '\n' + keyLine + 
+                    '\n' +
+                    '\n' +  lineNumber + ' ' + keyLine[keyLine.find(keyLine.split()[0]):-1] + 
                     '\n' +
                     '\n' + 
                     fileName +

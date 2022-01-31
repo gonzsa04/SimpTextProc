@@ -5,11 +5,14 @@ from os.path import isfile, join
 import sys
 import mapper
 
-mypath = 'C:/Users/Gonzalo Sanz/Desktop/Gonzalo/PythonSearchTool/test'
-files = listdir(mypath)
-
 filterType = sys.argv[1]
 
+mypath = sys.argv[2]
+#comentar linea de abajo
+mypath = "D:/Users/Gonzalo/Desktop/JGSL/Proyectos/PythonSearch Tool/SimpTextProc/test"
+mypath = mypath.replace("\\", "/")
+
+files = listdir(mypath)
 for file in files:
     #print(file)
     fichero = open(mypath + "/" + file, 'r', encoding="UTF-8")

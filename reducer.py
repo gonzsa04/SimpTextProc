@@ -42,6 +42,10 @@ def printLines():
                     "----------------------------------------------------------------------------------------" +
                     '\n'
                 )
+
+                '''fichero.write(
+                    fileName.upper()[0:-5] + '\n' + '\n'
+                )'''
             #print ("word: " + word)
             #print ("key: " + key)
             #print ("keyLine: " + keyLine)

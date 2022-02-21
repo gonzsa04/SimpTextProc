@@ -132,3 +132,5 @@ dmypy.json
 
 #testFiles
 /test
+/data
+/output.txt

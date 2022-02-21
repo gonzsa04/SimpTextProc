@@ -9,7 +9,7 @@ filterType = sys.argv[1]
 
 mypath = sys.argv[2]
 #comentar linea de abajo
-mypath = "D:/Users/Gonzalo/Desktop/JGSL/Proyectos/PythonSearch Tool/SimpTextProc/test"
+mypath = "C:/Users/Gonzalo Sanz/Desktop/Gonzalo/PythonSearchTool/SimpTextProc/test"
 mypath = mypath.replace("\\", "/")
 
 files = listdir(mypath)

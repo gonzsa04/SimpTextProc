@@ -8,10 +8,10 @@ def filterWords(text, fileName, filterType):
     i = 1
     
     comment = False
-    if '.xml' not in fileName: #and '.page' not in fileName and '.cmp' not in fileName and '.cls' not in fileName:
+    if '.xml' not in fileName:# and '.cmp' not in fileName and '.cls' not in fileName:# and '.cls' not in fileName:
         for line in text:
 
-            if '//' in line and '.cls' in fileName:
+            if '//' in line and ('.cls' in fileName or '.js' in fileName):
                 line = line[0:line.find('//') - 1]
             else: 
                 if '@modify' in line:
@@ -19,7 +19,7 @@ def filterWords(text, fileName, filterType):
             if "{'label':" in line:
                 line = line[0:line.find("{'label':") - 1]
 
-            if ('/*' in line and '.cls' in fileName) or '<!--' in line or ((' <p' in line or ' <h' in line) and '.cls' not in fileName):
+            if ('/*' in line and ('.cls' in fileName or '.js' in fileName)) or '<!--' in line or ((' <p' in line or ' <h' in line) and '.cls' not in fileName):
                 comment = True
 
             if comment == False:
